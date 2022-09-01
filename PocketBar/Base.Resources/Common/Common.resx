@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="ErrorMessage_AttemptedValueIsInvalid" xml:space="preserve">
+        <value>The value '{0}' is not valid for {1}.</value>
+    </data>
+    <data name="ErrorMessage_MissingBindRequiredValue" xml:space="preserve">
+        <value>A value for the '{0}' parameter or property was not provided.</value>
+    </data>
+    <data name="ErrorMessage_MissingKeyOrValue" xml:space="preserve">
+        <value>A value is required.</value>
+    </data>
+    <data name="ErrorMessage_MissingRequestBodyRequiredValue" xml:space="preserve">
+        <value>A non-empty request body is required.</value>
+    </data>
+    <data name="ErrorMessage_NonPropertyAttemptedValueIsInvalid" xml:space="preserve">
+        <value>The value '{0}' is not valid.</value>
+    </data>
+    <data name="ErrorMessage_NonPropertyUnknownValueIsInvalid" xml:space="preserve">
+        <value>The supplied value is invalid.</value>
+    </data>
+    <data name="ErrorMessage_NonPropertyValueMustBeANumber" xml:space="preserve">
+        <value>The supplied value is invalid for {0}.</value>
+    </data>
+    <data name="ErrorMessage_UnknownValueIsInvalid" xml:space="preserve">
+        <value>The supplied value is invalid for {0}.</value>
+    </data>
+    <data name="ErrorMessage_ValueIsInvalid" xml:space="preserve">
+        <value />
+    </data>
+    <data name="ErrorMessage_ValueMustBeANumber" xml:space="preserve">
+        <value>The field {0} must be a number.</value>
+    </data>
+    <data name="ErrorMessage_ValueMustNotBeNull" xml:space="preserve">
+        <value>The value '{0}' is invalid.</value>
+    </data>
+    <data name="ErrorMessage_Required" xml:space="preserve">
+        <value>The {0} field is required.</value>
+    </data>
+    <data name="ErrorMessage_StringLengthMinMax" xml:space="preserve">
+        <value>The field {0} must be a string with a maximum length of {1}.</value>
+    </data>
+    <data name="NameRequired" xml:space="preserve">
+        <value>Name Field Is Required</value>
+    </data>
+    <data name="MinLen" xml:space="preserve">
+        <value>The {0} must be at least {1} characters long.</value>
+    </data>
+    <data name="MaxLen" xml:space="preserve">
+        <value>The {0} must be not more than {1 characters long.</value>
+    </data>
+    <data name="DescriptionRequired" xml:space="preserve">
+        <value>Description Field Is Required</value>
+    </data>
+    <data name="AlcoholByVolumeRequired" xml:space="preserve">
+        <value>Alcohol By Volume Field Is Required</value>
+    </data>
+    <data name="GradeValueRequired" xml:space="preserve">
+        <value>Grade Value Field Is Required</value>
+    </data>
+    <data name="Name" xml:space="preserve">
+        <value>Name</value>
+    </data>
+    <data name="Description" xml:space="preserve">
+        <value>Description</value>
+    </data>
+    <data name="GradeValue" xml:space="preserve">
+        <value>Grading</value>
+    </data>
+    <data name="AlcoholByVolume" xml:space="preserve">
+        <value>Alcohol %</value>
+    </data>
+    <data name="CoverImagePath" xml:space="preserve">
+        <value>Cover Image Path</value>
+    </data>
+    <data name="Comment" xml:space="preserve">
+        <value>Comment</value>
+    </data>
+</root>

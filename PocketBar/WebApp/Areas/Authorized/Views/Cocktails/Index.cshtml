@@ -1,0 +1,202 @@
+﻿@model WebApp.Areas.Authorized.ViewModels.Cocktail.CocktailIndex
+
+@{
+    ViewData["Title"] = @App.Resources.Areas.Authorized.Cocktails.Index.HeadTitle;
+}
+
+
+<!-- Navigation Bar -->
+<partial name="_Navbar"/>
+
+<div class="d-flex">
+
+    <!-- Cocktails Section -->
+    <section class="gallery container-fluid">
+        <div class="header-section">
+
+        </div>
+
+        <!-- Wrong Response From Backend -->
+        @if (Model.Error != null)
+        {
+            <div class="alert alert-danger text-center mb-5">@Model.Error.ErrorMessage</div>
+        }
+
+        <!-- Cocktails Cards -->
+        <div class="row card-row">
+            @foreach (var cocktail in Model.Cocktails!)
+            {
+                <div class="card-data col-lg-2 mb-4">
+
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <img class="card-img-top" src=@(cocktail.CoverImagePath ?? "https://images.unsplash.com/photo-1484069560501-87d72b0c3669?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80") alt="Card image cap">
+
+                            <!-- Cocktail Data -->
+                            <h5 class="card-title fs-4 text-center">@cocktail.Name</h5>
+                            <hr class="hr-top"/>
+                            <p class="card-text">@cocktail.Description</p>
+
+                            <!-- Actions To Modify Or See Details Data -->
+                            <div class="card-btn-container text-center">
+                                <a asp-area="Authorized" asp-controller="Cocktails" asp-action="Details" asp-route-id="@cocktail.Id" class="btn btn-details fs-5 btn-sm">@App.Resources.Areas.Authorized.Cocktails.Index.DetailsButton</a>
+
+                                <!-- Allow Deletion If Admin Or Bartender Role. -->
+                                <a asp-area="Authorized" asp-controller="Cocktails" asp-action="Delete" asp-route-id="@cocktail.Id" class="btn btn-delete fs-5 btn-sm">@App.Resources.Areas.Authorized.Cocktails.Index.DeleteButton</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </section>
+</div>
+
+
+<style scoped>
+
+  .header-section {
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: url(https://images.unsplash.com/photo-1463797221720-6b07e6426c24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 20%;
+
+  }
+
+  .gallery {
+
+    width: 100%; 
+    position:relative;
+    padding-bottom: 100px;
+    background-color: #151515;
+    min-height: 100vh;
+
+  }
+
+  .card-img-top {
+
+    height: 250px;
+
+  }
+
+  .card-row {
+
+    margin-left: 50px; 
+    margin-right: 50px;
+
+  }
+
+  .card {
+    
+    margin-top: 50px
+
+  }
+
+  .btn-delete {
+
+    border-color: black;
+    color: black;
+    background-color: white;
+    width: 45%; 
+    height: 40px; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+
+  }
+
+  .btn-details {
+
+    border-color: rgb(255, 191, 71);
+    color: black;
+    background-color: white;
+    width: 45%; 
+    height: 40px; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+
+    
+  }
+
+  .btn-delete:hover {
+
+    background-color: black;
+    color: white;
+
+  }
+
+  .btn-details:hover {
+
+    background-color: rgb(255, 191, 71);
+    color:white;
+
+  }
+
+  .card-text {
+
+    margin-top: 20px;
+    text-justify: inter-word; 
+    text-align: justify;
+    margin-bottom: 50px
+
+  }
+
+  .card-btn-container {
+
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+
+  }
+
+  .card:hover {
+
+    border: 2px solid black;
+
+  }
+
+  .image-header {
+
+    height: 50px;
+
+  }
+
+  .hr-top {
+
+    margin-top: 5px;
+
+  }
+
+  .card-add-button:hover {
+
+    background-color: greenyellow;
+
+  }
+
+  .card-add-button {
+
+    border: 2px solid black;
+
+  }
+
+  .add-card-row {
+
+    padding-top: 100px;
+    padding-bottom: 150px;
+    margin-bottom: 15px;
+    height: 50px;
+
+  }
+
+  .add-card-container {
+
+      width: 30%;
+      height: 100px;
+
+  }
+
+</style>

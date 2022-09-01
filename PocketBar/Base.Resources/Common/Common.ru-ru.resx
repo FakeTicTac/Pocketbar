@@ -1,0 +1,106 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="ErrorMessage_AttemptedValueIsInvalid" xml:space="preserve">
+        <value>
+Значение '{0}' недопустимо для {1}.</value>
+    </data>
+    <data name="ErrorMessage_MissingBindRequiredValue" xml:space="preserve">
+        <value>Не указано значение для параметра или свойства '{0}'.
+</value>
+    </data>
+    <data name="ErrorMessage_MissingKeyOrValue" xml:space="preserve">
+        <value>Требуется значение.
+</value>
+    </data>
+    <data name="ErrorMessage_MissingRequestBodyRequiredValue" xml:space="preserve">
+        <value>Требуется непустое тело запроса.
+</value>
+    </data>
+    <data name="ErrorMessage_NonPropertyAttemptedValueIsInvalid" xml:space="preserve">
+        <value>Значение '{0}' недопустимо.
+</value>
+    </data>
+    <data name="ErrorMessage_NonPropertyUnknownValueIsInvalid" xml:space="preserve">
+        <value>Предоставленное значение недопустимо.
+</value>
+    </data>
+    <data name="ErrorMessage_NonPropertyValueMustBeANumber" xml:space="preserve">
+        <value>Предоставленное значение недопустимо для {0}.
+</value>
+    </data>
+    <data name="ErrorMessage_Required" xml:space="preserve">
+        <value>Поле {0} является обязательным.
+</value>
+    </data>
+    <data name="ErrorMessage_StringLengthMinMax" xml:space="preserve">
+        <value>Поле {0} должно быть строкой максимальной длины {1}.
+</value>
+    </data>
+    <data name="ErrorMessage_UnknownValueIsInvalid" xml:space="preserve">
+        <value>Предоставленное значение недопустимо для {0}.
+</value>
+    </data>
+    <data name="ErrorMessage_ValueMustBeANumber" xml:space="preserve">
+        <value>Поле {0} должно быть числом.
+</value>
+    </data>
+    <data name="ErrorMessage_ValueMustNotBeNull" xml:space="preserve">
+        <value>Значение '{0}' недопустимо.
+</value>
+    </data>
+    <data name="NameRequired" xml:space="preserve">
+        <value>Поле имя обязательно</value>
+    </data>
+    <data name="MaxLen" xml:space="preserve">
+        <value>{0} должно быть не длиннее {1} символов.
+</value>
+    </data>
+    <data name="GradeValueRequired" xml:space="preserve">
+        <value>Обязательное поле "Значение оценки"
+</value>
+    </data>
+    <data name="MinLen" xml:space="preserve">
+        <value>{0} должно содержать не менее {1} символов.
+</value>
+    </data>
+    <data name="DescriptionRequired" xml:space="preserve">
+        <value>Описание Поле обязательно
+</value>
+    </data>
+    <data name="AlcoholByVolumeRequired" xml:space="preserve">
+        <value>Поле «Алкоголь по объему» обязательно
+</value>
+    </data>
+    <data name="Name" xml:space="preserve">
+        <value>Название</value>
+    </data>
+    <data name="GradeValue" xml:space="preserve">
+        <value>Оценка</value>
+    </data>
+    <data name="Description" xml:space="preserve">
+        <value>Описание
+</value>
+    </data>
+    <data name="AlcoholByVolume" xml:space="preserve">
+        <value>Алкоголь %
+</value>
+    </data>
+    <data name="Comment" xml:space="preserve">
+        <value>Комментарий</value>
+    </data>
+    <data name="CoverImagePath" xml:space="preserve">
+        <value>Путь к изображению обложки
+</value>
+    </data>
+</root>

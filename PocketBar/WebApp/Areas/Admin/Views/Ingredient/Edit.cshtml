@@ -1,0 +1,115 @@
+@model WebApp.Areas.Admin.ViewModels.Ingredient.IngredientCreate
+
+@{
+    ViewData["Title"] = $"{@App.Resources.Areas.Admin.Ingredient.Edit.HeadTitle} {Model.Name?.ToUpper()}";
+}
+
+
+
+<div class="d-flex">
+
+    <!-- Navigation -->
+    <partial name="_AdminNavbar"/>
+
+    <!-- Ingredient Edit Section -->
+    <section class="gallery">
+
+        <section class="vh-100 wrapper">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card bg-dark text-white data-box">
+                            <div class="card-body p-5 text-center">
+                                <form asp-action="Edit" class="mb-md-5 mt-md-4 pb-5">
+
+                                    <!-- Action -->
+                                    <h2 class="fw-bold mb-2 text-uppercase">@App.Resources.Areas.Admin.Ingredient.Edit.Action</h2>
+
+                                    <!-- Action Description -->
+                                    <p class="text-white mt-5 mb-5">@App.Resources.Areas.Admin.Ingredient.Edit.ActionDescription</p>
+
+                                    <!-- Wrong Input Response From Backend -->
+                                    <div asp-validation-summary="All" class="alert alert-danger text-center mb-5"></div>
+
+                                    <!-- Name Field -->
+                                    <div class="form-outline form-white mb-4">
+                                        <input asp-for="Name" v-model="name" type="text" class="form-control form-control-lg" placeholder="@App.Resources.Areas.Admin.Ingredient.Edit.NamePlaceholder"/>
+                                    </div>
+
+                                    <!-- Description Field -->
+                                    <textarea  asp-for="Description" class="form-control" id="textAreaExample" rows="4" style="background: #fff; " placeholder="@App.Resources.Areas.Admin.Ingredient.Edit.DescriptionPlaceholder"></textarea>
+
+                                    <!-- Image Field -->
+                                    <div class="form-outline form-white mt-5 mb-4">
+                                        <input asp-for="CoverImagePath" type="text" class="form-control" placeholder="@App.Resources.Areas.Admin.Ingredient.Edit.ImagePlaceholder"/>
+                                    </div>
+                                    
+                                    <input type="hidden" asp-for="Id" />
+
+                                    <!-- Action Button -->
+                                    <input type="submit" value="@App.Resources.Areas.Admin.Ingredient.Edit.ModifyButton" class="left-btn btn btn-outline-light btn-lg px-5 mt-5"/>
+                                    <a asp-area="Admin" asp-controller="Ingredient" asp-action="Index" class="right-btn btn btn-outline-light btn-lg px-5 mt-5">@App.Resources.Areas.Admin.Ingredient.Edit.BackButton</a>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+
+
+<style scoped>
+
+  .gallery {
+
+    width: 100%; 
+    margin-left:300px;
+    position:relative;
+    background-image: url(https://images.unsplash.com/photo-1463797221720-6b07e6426c24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 20%;
+
+  }
+  
+  .validation-summary-valid { 
+      
+    display: none; 
+      
+  }
+
+  .data-box {
+
+    border-radius: 1rem;
+    border-color: white;
+
+  }
+
+  .card-body {
+
+    border-radius: 1rem;
+    background-color: rgb(51, 49, 49);
+
+  }
+
+  .left-btn{
+
+    margin-right: 20px;
+
+  }
+  
+  .right-btn {
+
+    margin-left: 20px;
+
+  }
+
+</style>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

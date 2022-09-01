@@ -1,0 +1,102 @@
+﻿
+<div class="d-flex side-bar  flex-column flex-shrink-0 p-3 text-white bg-dark">
+    <span class="fs-3 text-center section-title">@App.Resources.Areas.Admin.Shared._AdminNavbar.NavTitle</span>
+    <hr>
+
+    <ul class="nav nav-pills mt-5 flex-column mb-auto">
+        <li class="nav-item">
+
+            <!-- Control Panel Home Page -->
+            <a asp-area="Admin" asp-controller="ControlPanel" asp-action="Index" class="@(Context.Request.Path == "/Admin/ControlPanel" ? "active" : "") nav-link text-white">@App.Resources.Areas.Admin.Shared._AdminNavbar.ControlHome</a>
+
+            <!-- Control Panel Home Page -->
+            <a asp-area="Authorized" asp-controller="HomePage" asp-action="Index" class="nav-link mt-1 text-white">@App.Resources.Areas.Admin.Shared._AdminNavbar.Home</a>
+
+        </li>
+
+
+        <!-- Control Panel Data Management Pages -->
+        <hr class="mt-5">
+        <span class="fs-5 text-center section-title">@App.Resources.Areas.Admin.Shared._AdminNavbar.DataManagement</span>
+        <hr>
+
+
+        <li class="mt-2">
+
+            <!-- Control Panel Drink Management System Page -->
+            <a asp-area="Admin" asp-controller="Drink" asp-action="Index" class="@(Context.Request.Path == "/Admin/Drink" ? "active" : "") nav-link text-white">@App.Resources.Areas.Admin.Shared._AdminNavbar.Drinks</a>
+
+        </li>
+        <li>
+
+            <!-- Control Panel Drink Type Management System Page -->
+            <a asp-area="Admin" asp-controller="DrinkType" asp-action="Index" class="@(Context.Request.Path == "/Admin/DrinkType" ? "active" : "") nav-link mt-1 text-white">@App.Resources.Areas.Admin.Shared._AdminNavbar.DrinkTypes</a>
+
+        </li>
+        <li>
+
+            <!-- Control Panel Ingredient Management System Page -->
+            <a asp-area="Admin" asp-controller="Ingredient" asp-action="Index" class="@(Context.Request.Path == "/Admin/Ingredient" ? "active" : "") nav-link mt-1 text-white">@App.Resources.Areas.Admin.Shared._AdminNavbar.Ingredient</a>
+
+        </li>
+        <li>
+
+            <!-- Control Panel Amount Unit Management System Page -->
+            <a asp-area="Admin" asp-controller="AmountUnit" asp-action="Index" class="@(Context.Request.Path == "/Admin/AmountUnit" ? "active" : "") nav-link mt-1 text-white">@App.Resources.Areas.Admin.Shared._AdminNavbar.AmountUnits</a>
+
+        </li>
+        <li>
+
+            <!-- Control Panel Rating Management System Page -->
+            <a asp-area="Admin" asp-controller="Rating" asp-action="Index" class="@(Context.Request.Path == "/Admin/Rating" ? "active" : "") nav-link mt-1 text-white">@App.Resources.Areas.Admin.Shared._AdminNavbar.Ratings</a>
+
+        </li>
+        <li>
+
+            <!-- Language -->
+            <partial name="_LanguageSelection"/>
+            
+        </li>
+    </ul>
+    <hr>
+
+    <!-- Control Panel Rating Management System Page -->
+    <a asp-area="Identity" asp-controller="Logout" asp-action="Logout" class="nav-link logout text-center fs-4 text-white">@App.Resources.Areas.Admin.Shared._AdminNavbar.Logout</a>
+
+</div>
+
+
+<style scoped>
+
+    .side-bar {
+
+        width: 300px; 
+        height: 100vh;
+        background-color: #151515 !important ;
+        overflow: auto;
+        position: fixed;
+    }
+
+    .section-title {
+        
+        font-weight: bold;
+
+    }
+
+    .active {
+
+      background-color: white !important ;
+        color: black !important ;
+
+    }
+
+    .nav-link:hover {
+        background-color: rgba(142, 243, 83, 0.774)
+    }
+
+    .logout:hover {
+        background-color: white;
+        color: black !important ;
+    }
+
+</style>

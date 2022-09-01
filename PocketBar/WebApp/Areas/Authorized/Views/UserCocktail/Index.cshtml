@@ -1,0 +1,200 @@
+﻿@model WebApp.Areas.Authorized.ViewModels.UserCocktail.UserCocktailIndex
+
+@{
+    ViewData["Title"] = @App.Resources.Areas.Authorized.UserCocktail.Index.HeadTitle;
+}
+
+
+<div class="favourite-wrapper">
+
+    <!-- Navigation Bar -->
+    <partial name="_Navbar"/>
+
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+
+            @if (Model.Error != null)
+            {
+                <div class="alert alert-danger mt-3 text-center">@Model.Error.ErrorMessage</div>
+            }
+            else if (Model.UserCocktails!.Count == 0)
+            {
+                <div class="alert alert-danger mt-3 text-center">@App.Resources.Areas.Authorized.UserCocktail.Index.NoCocktailsTitle</div>
+            }
+
+            @foreach (var userCocktail in Model.UserCocktails!)
+            {
+                <div class="col-md-10">
+                    <div class="row p-2 bg-white item-data border rounded user-cocktail-section">
+
+                        <!-- Cocktail Image -->
+                        <div class="col-md-3 mt-1">
+                            <img class="img-fluid img-responsive rounded product-image" src="@(userCocktail.CoverImagePath)" alt="Image">
+                        </div>
+
+                        <!-- Cocktail Data -->
+                        <div class="col-md-6 mt-1">
+                            <h5>@userCocktail.CocktailName</h5>
+
+                            <div class="d-flex flex-row">
+                                <span class="fs-5 mt-2 rating-value">@userCocktail.RatingValue</span>
+                            </div>
+
+                            <p class="text-justify para mt-4 mb-0">
+                                @userCocktail.Comment<br><br>
+                            </p>
+                        </div>
+
+                        <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+
+                            <div class="d-flex justify-content-center flex-column button-section">
+
+                                <a asp-area="Authorized" asp-controller="Cocktails" asp-action="Details" asp-route-id="@userCocktail.CocktailId" class="btn btn-danger btn-details w-100">@App.Resources.Areas.Authorized.UserCocktail.Index.RecepieButton</a>
+                                <a asp-area="Authorized" asp-controller="UserCocktail" asp-action="Delete" asp-route-id="@userCocktail.Id" class="btn btn-danger btn-delete w-100">@App.Resources.Areas.Authorized.UserCocktail.Index.DeleteButton</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+
+<style scoped>
+
+  .favourite-wrapper {
+
+    background-color: black; 
+    min-height: 100vh;
+    padding-bottom: 100px;
+    background-image: url(https://images.unsplash.com/photo-1597290282695-edc43d0e7129?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1750&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+  }
+  
+  .rating-value {
+  
+    margin-left: 20px;
+  
+  }
+
+  .button-section {
+  
+    height: 200px; 
+  
+  }
+  
+
+  .item-data {
+
+    background-color: rgba(0, 0, 0, 0.747) !important;
+    color: white !important;
+
+  }
+  
+  .user-cocktail-section {
+  
+    margin-top: 50px;
+    
+  }
+
+  .btn-delete {
+
+    border-color: red;
+    color: black;
+    background-color: white;
+    width: 45%; 
+    height: 40px; 
+    margin-top: 8px; 
+    margin-bottom: 20px;
+
+  }
+
+  .btn-details {
+
+    border-color: rgb(255, 191, 71);
+    color: black;
+    background-color: white;
+    width: 45%; 
+    height: 40px; 
+    margin-top: 20px; 
+    margin-bottom: 8px;
+
+    
+  }
+
+  .btn-delete:hover {
+
+    background-color: red;
+    color: white;
+
+  }
+
+  .btn-details:hover {
+
+    border-color: rgb(255, 191, 71);
+    background-color: rgb(255, 191, 71);
+    color:black;
+
+  }
+
+  h5 {
+
+    font-weight: 400;
+    font-size: 40px;
+    color: greenyellow;
+  
+  }
+
+  .ratings i{
+    
+    font-size: 16px;color: red
+    
+  }
+    
+  .strike-text{
+    
+     color: red;
+     text-decoration: line-through
+        
+  }
+        
+  .product-image{
+    
+     width: 100%;
+     height: 200px;
+    
+  }
+    
+  .dot{
+    
+    height: 7px;
+    width: 7px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 3px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block
+    
+  }
+    
+  .spec-1{
+    
+    color: #938787;
+    font-size: 15px
+    
+  }
+
+  .para{
+    
+    font-size: 16px
+    
+  }
+  
+</style>

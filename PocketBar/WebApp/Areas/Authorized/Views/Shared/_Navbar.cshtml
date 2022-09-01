@@ -1,0 +1,61 @@
+﻿
+<nav class=" d-flex justify-content-center navbar navbar-dark bg-dark">
+    
+    <!-- Menu Items -->
+    <a asp-area="Authorized" asp-controller="HomePage" asp-action="Index" class="navbar-brand mb-0 h1">@App.Resources.Areas.Authorized.Shared._Navbar.Home</a>
+    <span> | </span>
+    <a asp-area="Authorized" asp-controller="Cocktails" asp-action="Index" class="navbar-brand mb-0 h1">@App.Resources.Areas.Authorized.Shared._Navbar.Cocktails</a>
+    <span> | </span>
+    <a asp-area="Authorized" asp-controller="UserCocktail" asp-action="Index" class="navbar-brand mb-0 h1">@App.Resources.Areas.Authorized.Shared._Navbar.Favourites</a>
+    <span> | </span>
+    <partial name="_LanguageSelection"/>
+    
+    <!-- Logout -->
+    <a asp-area="Identity" asp-controller="Logout" asp-action="Logout" class="navbar-brand logout mb-0 h1">@App.Resources.Areas.Authorized.Shared._Navbar.Logout</a>
+    
+</nav>
+
+
+<style scoped>
+
+    .navbar-brand {
+
+        margin: 0;
+
+    }
+
+    .navbar-brand:hover {
+
+        color: greenyellow !important;
+
+    }
+
+    .h1 {
+
+        font-size: 25px;
+
+    }
+
+    .logout {
+    
+        position:absolute; 
+        right: 30px
+    
+    }
+
+    .logout:hover {
+
+        color: red !important;
+
+    }
+
+    span {
+
+        color: white;
+        font-size: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+
+    }
+
+</style>

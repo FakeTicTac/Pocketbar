@@ -1,0 +1,100 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>aspnet-WebApp-483688AF-12F0-4F77-AAC8-FCD2495092F9</UserSecretsId>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="WebApp.Tests" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.3" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.4" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Api.DTO.v1\Api.DTO.v1.csproj" />
+      <ProjectReference Include="..\App.BLL\App.BLL.csproj" />
+      <ProjectReference Include="..\App.DAL.EF\App.DAL.EF.csproj" />
+      <ProjectReference Include="..\Base.Extensions\Base.Extensions.csproj" />
+      <ProjectReference Include="..\Base.WebApp.Helpers\Base.WebApp.Helpers.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\AmountUnit\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\AmountUnit\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\AmountUnit\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\AmountUnit\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\AmountUnit\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Cocktail\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Cocktail\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Cocktail\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Cocktail\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Cocktail\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Drink\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Drink\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Drink\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Drink\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Drink\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\DrinkInCocktail\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\DrinkInCocktail\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\DrinkInCocktail\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\DrinkInCocktail\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\DrinkInCocktail\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\DrinkType\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\DrinkType\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\DrinkType\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\DrinkType\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\DrinkType\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Ingredient\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Ingredient\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Ingredient\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Ingredient\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Ingredient\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\IngredientInCocktail\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\IngredientInCocktail\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\IngredientInCocktail\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\IngredientInCocktail\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\IngredientInCocktail\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Rating\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Rating\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Rating\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Rating\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Rating\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\RefreshToken\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\RefreshToken\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\RefreshToken\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\RefreshToken\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\RefreshToken\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Step\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Step\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Step\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Step\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\Step\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\UserCocktail\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\UserCocktail\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\UserCocktail\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\UserCocktail\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Admin\Views\UserCocktail\Index.cshtml" />
+    </ItemGroup>
+
+</Project>

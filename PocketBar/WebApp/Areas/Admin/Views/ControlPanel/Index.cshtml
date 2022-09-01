@@ -1,0 +1,99 @@
+﻿@using Base.Extensions
+
+@{
+    ViewData["Title"] = @App.Resources.Areas.Admin.ControlPanel.Index.HeadTitle;
+}
+
+
+<div class="d-flex">
+
+    <!-- Navigation -->
+    <partial name="_AdminNavbar"/>
+
+    <!-- Intro View -->
+    <section class="d-flex d-flex justify-content-center align-items-center text-white intro-section">
+        <div>
+
+            <h1 class="text-section display-4">@App.Resources.Areas.Admin.ControlPanel.Index.Greeting, @(User.GetUserName()), @App.Resources.Areas.Admin.ControlPanel.Index.Hello!</h1>
+            <div class="d-flex d-flex justify-content-center align-items-center">
+                <div id="clock" class="digital-clock d-flex justify-content-center align-items-center"></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+<script>
+
+      /*
+      * Created Lifecycle Simulation.
+      */
+      window.onload = function () {
+      
+          clockUpdate();
+          
+      }
+
+      /**
+       * Create Timer For Intro Section.
+       */
+      function clockUpdate() {
+        
+        const today = new Date();
+      
+        let hours = today.getHours().toString();
+        let minutes = this.checkTime(today.getMinutes());
+        let seconds = this.checkTime(today.getSeconds());
+        console.log("SDAD")
+        document.getElementById("clock").innerText = `${hours}:${minutes}:${seconds}`;
+        
+        setTimeout(this.clockUpdate, 1000);
+
+    }
+
+      /**
+       * Methods Handles One Number Values. Adds 0 At The Beginning.
+       */
+      function checkTime(time) {
+        
+        return time < 10 ? "0" + time.toString() : time.toString();
+
+      }
+
+</script>
+
+
+<style scoped>
+
+  .intro-section {
+
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://images.unsplash.com/photo-1550520293-d34b3f2e116d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+
+  }
+
+  .text-section {
+
+    background-color: white; 
+    border-radius: 20px;
+    padding: 30px;
+    color:black;
+
+  }
+
+  .digital-clock {
+    width: 300px;
+    height: 100px;
+    color: black;
+    border: 2px solid black;
+    border-radius: 4px;
+    text-align: center;
+    font: 50px/60px 'DIGITAL', Helvetica;
+    background: white;
+}
+
+</style>

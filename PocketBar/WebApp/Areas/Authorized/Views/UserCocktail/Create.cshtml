@@ -1,0 +1,184 @@
+﻿@model WebApp.Areas.Authorized.ViewModels.UserCocktail.UserCocktailCreate
+
+@{
+    ViewData["Title"] = @App.Resources.Areas.Authorized.UserCocktail.Create.HeadTitle;
+}
+
+
+<!-- Fancy Bartender Video On Background -->
+<div class="intro bg-image vh-100 shadow-1-strong">
+    <video playsinline autoplay muted loop>
+        <source class="h-100" src="~/assets/videos/landing-bar.mp4" type="video/mp4"/>
+    </video>
+</div>
+
+<!-- Input Section -->
+<section class="container-workshop vh-100 wrapper">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 ">
+                <div class="card bg-dark text-white data-box">
+                    <div class="card-body p-5 text-center">
+                        <form asp-action="Create" class="mb-md-5 mt-md-4 pb-5">
+
+                            <!-- Action -->
+                            <h2 class="fw-bold mb-2 text-uppercase">@App.Resources.Areas.Authorized.UserCocktail.Create.Action</h2>
+
+                            <!-- Wrong Input Response From Backend -->
+                            <div asp-validation-summary="All" class="alert alert-danger text-center mb-5"></div>
+
+                            <!-- Comment Field -->
+                            <textarea asp-for="Comment" class="form__field description" id="textAreaExample" rows="4" placeholder="@App.Resources.Areas.Authorized.UserCocktail.Create.CommentPlaceholder"></textarea>
+
+                            <!-- Rating Field -->
+                            <select asp-for="RatingId" class="form__field description mb-5  mt-4" asp-items="@Model.Ratings"></select>
+                            
+                            <input type="hidden" asp-for="CocktailId" />
+                            
+                            <!-- Action Button -->
+                            <button type="submit" class="left-btn btn btn-outline-light btn-lg px-5 mt-5">@App.Resources.Areas.Authorized.UserCocktail.Create.RateButton</button>
+                            <a asp-area="Authorized" asp-controller="Cocktails" asp-action="Index"  class="right-btn btn btn-outline-light btn-lg px-5 mt-5">@App.Resources.Areas.Authorized.UserCocktail.Create.BackButton</a>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+<style scoped>
+
+    /* Fancy Bartender Video On Background */
+
+    h2 {
+
+      color:  greenyellow;
+      text-decoration: underline;
+      margin-top: 50px;
+      padding-bottom: 50px;
+
+    }
+
+    .validation-summary-valid { 
+          
+      display: none; 
+          
+    }
+
+    video {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .intro {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .data-box {
+
+      border-radius: 1rem;
+
+    }
+
+    .description {
+
+      margin-top: 30px;
+
+    }
+
+    option {
+
+        font-size: 20px;
+        color: gray
+
+    }
+
+    .left-btn {
+
+      font-size: 40px;
+      margin-right: 50px;
+      width: 30%;
+
+    }
+
+    .left-btn:hover {
+      
+      border: none;
+      background-color: greenyellow;
+
+    }
+
+    .right-btn {
+
+      font-size: 40px;
+      margin-left: 50px;
+      width: 30%;
+
+    }
+
+    .container-workshop {
+        
+      height: 100vh;
+      font-family: 'Poppins', sans-serif; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-size: 1.5rem;
+      position: fixed;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: #f1f1f1;
+      width: 100%;
+      padding: 20px;
+
+    }
+
+  .form__field {
+
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 2rem;
+    color: gray !important;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    height: 100px;
+
+  }
+
+  .form__field:focus {
+
+    padding-bottom: 6px;  
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, greenyellow, rgb(98, 160, 5));
+    border-image-slice: 1;
+    color: white !important;
+
+  }
+
+  .form__field:hover {
+
+    padding-bottom: 6px;
+    color: white;  
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, greenyellow, rgb(98, 160, 5));
+    border-image-slice: 1;
+    
+  }
+
+  .form__field:focus::-webkit-input-placeholder {
+
+    color: transparent;
+
+  }
+
+</style>

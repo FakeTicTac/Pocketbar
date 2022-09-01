@@ -1,0 +1,258 @@
+﻿@model App.BLL.DTO.Cocktail
+
+@{
+  ViewData["Title"] = $"{Model.Name} {@App.Resources.Areas.Authorized.Cocktails.Details.HeadTitle}";
+}
+
+
+<!-- Navigation Bar -->
+<partial name="_Navbar"/>
+
+
+<div class="detail-container d-flex justify-content-center">
+
+    <!-- Details -->
+    <div class="col-lg-8 border p-3 main-section">
+
+        <div class="row detail-section m-0">
+
+            <!-- Image Of Cocktail -->
+            <div class="col-lg-4 left-side-product-box">
+                <img src=@(Model.CoverImagePath ?? "https://images.unsplash.com/photo-1484069560501-87d72b0c3669?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80") alt="Card image cap" class="border p-3">
+            </div>
+
+            <!-- Ingredients And Drinks Of Cocktail -->
+            <div class="col-lg-8">
+                <div class="right-side-pro-detail border p-3 m-0">
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <p class="m-0 p-0 cocktail-name text-center">@Model.Name</p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12 mt-3 mb-3 text-center">
+                                <p class="@(Model.IsAlcoholic ? "alcohol-field-care" : "alcohol-field-fine") m-0 p-0 alcohol-field">@(Model.IsAlcoholic ? @App.Resources.Areas.Authorized.Cocktails.Details.NotForKids : @App.Resources.Areas.Authorized.Cocktails.Details.ForKids)</p>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-lg-6 pt-2 ingredients">
+                                <h5 class="text-center">@App.Resources.Areas.Authorized.Cocktails.Details.IngredientTitle</h5>
+
+                                <!-- Go Through All Ingredients For Cocktail -->
+                                @for(var x = 0; x < Model.IngredientInCocktails!.Count; x++)
+                                {
+                                    <div class="mt-3 mb-3">
+                                        <span class="fs-5" style="color: black !important;">
+                                            @(x + 1)) @Model.IngredientInCocktails.ElementAt(x).IngredientName - @Model.IngredientInCocktails.ElementAt(x).Amount @Model.IngredientInCocktails.ElementAt(x).AmountUnitName
+                                        </span>
+                                    </div>
+                                }
+                                
+                            </div>
+                            
+                            <div class="col-lg-6 pt-2 ingredients">
+                                <h5 class="text-center">@App.Resources.Areas.Authorized.Cocktails.Details.DrinkTitle</h5>
+
+                                @for(var x = 0; x < Model.DrinksInCocktails!.Count; x++)
+                                {
+                                    <div class="mt-3 mb-3">
+                                        <span class="fs-5" style="color: black !important;">
+                                            @(x + 1)) @Model.DrinksInCocktails.ElementAt(x).DrinkName - @Model.DrinksInCocktails.ElementAt(x).Amount @Model.DrinksInCocktails.ElementAt(x).AmountUnitName
+                                        </span>
+                                    </div>
+                                }
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-lg-12 pt-2">
+                <h5 class="mt-5 text-center step-text fs-4 mb-5">@App.Resources.Areas.Authorized.Cocktails.Details.StepTitle</h5>
+
+                <!-- Go Through All Steps For Cocktail -->
+                @for (var x = 0; x < Model.Steps!.Count; x++)
+                {
+                    var sortedSteps = Model.Steps!.ToList().OrderBy(y => y.IndexNumber).ToList();
+                    
+                    <div class="step-section">
+                        <span class="fs-5">@sortedSteps.ElementAt(x).IndexNumber - @sortedSteps.ElementAt(x).Description</span>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 mt-3">
+                <div class="row">
+                    <div class="d-flex justify-content-center col-lg-12 pb-2">
+                        <a asp-area="Authorized" asp-controller="UserCocktail" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-danger button-details w-50">@App.Resources.Areas.Authorized.Cocktails.Details.AddButton</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<style scoped>
+
+    .detail-container {
+
+        background-image: url(https://images.unsplash.com/photo-1597290282695-edc43d0e7129?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1750&q=80);
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: calc(100vh - 61px);
+        
+    }
+
+    .step-text {
+    
+        color: greenyellow;
+    
+    }
+    
+    .step-section {
+    
+        margin-left: 25%; 
+        margin-top: 10px;
+    
+    }
+
+    .button-modify {
+
+        font-size: 30px;
+        border-color: rgb(255, 174, 0) !important;
+        background-color: black !important;
+
+    }
+
+    .button-modify:hover {
+
+        font-size: 30px;
+        border-color: transparent;
+        background-color: rgb(255, 174, 0) !important;
+
+    }
+
+    .main-section {
+
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        top: 250px;
+        transform: translate(-50%);
+        border-radius: 25px;
+        background-color: rgba(0, 0, 0, 0.699);
+        color: white;
+
+    }
+
+    .button-details {
+
+        font-size: 30px;
+        border-color: rgb(0, 204, 255) !important;
+        background-color: black !important;
+
+    }
+
+    .button-details:hover {
+
+        font-size: 30px;
+        border-color: transparent;
+        background-color: rgb(0, 204, 255) !important;
+
+    }
+
+    .detail-section {
+
+        padding-top: 50px;
+
+    }
+
+    .left-side-product-box img {
+
+        width: 100%;
+        border-color: transparent !important;
+
+    }
+
+    .left-side-product-box .sub-img img {
+
+        margin-top: 5px;
+        width: 83px;
+        height: 100px;
+        
+    }
+
+    .cocktail-name {
+
+        font-size: 40px !important;
+        font-weight: bold;
+        color: greenyellow !important;
+
+    }
+
+    .alcohol-field-fine {
+
+        color: greenyellow !important;
+
+    }
+
+    .alcohol-field-care {
+
+        color: red !important;
+
+    }
+
+    .right-side-pro-detail span {
+
+        font-size: 15px;
+        
+    }
+
+    .ingredients {
+
+        background-color: white; 
+        color: black !important;
+        border-radius: 20px;
+        border: solid 20px black; 
+
+    }
+
+    .right-side-pro-detail {
+    
+        border-color: transparent !important;
+    
+    }
+
+    .right-side-pro-detail p {
+        font-size: 25px;
+        color: #a1a1a1;
+        
+    }
+
+    .right-side-pro-detail .price-pro {
+        color: #E45641;
+    }
+
+    .right-side-pro-detail .tag-section {
+        font-size: 18px;
+        color: #5D4C46;
+    }
+
+    .pro-box-section .pro-box img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .pro-box-section .pro-box img {
+       height: auto;
+    }
+     
+</style>

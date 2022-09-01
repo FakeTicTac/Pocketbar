@@ -1,0 +1,86 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = @App.Resources.Areas.Identity.Account.Login.HeadTitle;
+}
+
+
+<section class="vh-100 wrapper">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white data-box">
+          <form id="form-login" method="post" class="card-body p-5 text-center">
+            <div class="mb-md-5 mt-md-4 pb-5">
+
+              <!-- Action -->
+              <h2 class="fw-bold mb-2 text-uppercase">@App.Resources.Areas.Identity.Account.Login.LoginTitle</h2>
+
+              <!-- Action Description -->
+              <p class="text-white mt-5 mb-5">@App.Resources.Areas.Identity.Account.Login.ActionDescription</p>
+
+              <!-- Wrong Input Response From Backend -->
+              <div asp-validation-summary="All" class="alert validation-summary-valid alert-danger text-center mb-5"></div>
+
+              <!-- Email Field -->
+              <div class="form-outline form-white mb-4">
+                <input id="loginField" asp-for="Input.Username" type="text" class="form-control" autocomplete="username" placeholder="@App.Resources.Areas.Identity.Account.Login.UsernamePlaceholder" aria-required="true"/>
+              </div>
+
+              <!-- Password Field -->
+              <div class="form-outline form-white mb-4">
+                <input id="passwordField" asp-for="Input.Password" type="password" class="form-control" autocomplete="current-password" placeholder="@App.Resources.Areas.Identity.Account.Login.PasswordPlaceholder" aria-required="true"/>
+              </div>
+
+              <!-- Login Button -->
+              <button id="login-submit" type="submit" class="btn btn-outline-light btn-lg px-5 mt-5">@App.Resources.Areas.Identity.Account.Login.LoginButton</button>
+
+            </div>
+
+            <div>
+
+              <!-- Create New Account Button -->
+              <p class="mb-0">
+                @App.Resources.Areas.Identity.Account.Login.NewAccountAction
+                <a asp-page="RegisterModel" class="fw-bold p-1" asp-route-returnUrl="@Model.ReturnUrl">@App.Resources.Areas.Identity.Account.Login.SingUp</a>
+              </p>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style scoped>
+
+  .wrapper {
+
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://images.unsplash.com/photo-1573551565922-aec98de55802?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+    background-size: cover;
+    background-blend-mode: darken;
+
+  }
+
+  .data-box {
+
+    border-radius: 1rem;
+    border-color: white;
+
+  }
+
+  .validation-summary-valid { 
+  
+    display: none;
+    
+  }
+
+</style>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
